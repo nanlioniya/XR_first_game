@@ -17,9 +17,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Home.unity
     guid: 523e2c119988c7349b69dc25a7bde507
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Testing/Testing_pinyun.unity
     guid: f8f09a0154355c74b870196c24da0200
+  - enabled: 0
+    path: Assets/Asset_packages/Oculus/Interaction/Samples/Scenes/Examples/DistanceGrabExamples.unity
+    guid: e1c1f1d4144ac8849ac1833b99bdfd23
+  - enabled: 0
+    path: Assets/Asset_packages/Oculus/Interaction/Samples/Scenes/Examples/PokeExamples.unity
+    guid: ada3086bde0ab18459589e22d8d9e182
+  - enabled: 0
+    path: Assets/Asset_packages/Oculus/Interaction/Samples/Scenes/Examples/TransformerExamples.unity
+    guid: 7475942f60c376744ba1ec487d140105
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: b60df6095973faa4998ee0dd2a5f79fa, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 448631f915bf5014d9e3dd81013ec27b, type: 2}
