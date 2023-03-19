@@ -1993,7 +1993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11fe2d94c35d6cf418b735d5ad014994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 1489659793}
+  isHorizontally: 0
 --- !u!1 &210638883
 GameObject:
   m_ObjectHideFlags: 0
@@ -13075,7 +13075,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1476735715}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -13162,11 +13162,6 @@ Transform:
   m_Father: {fileID: 93994136}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1489659793 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1004447257342161470, guid: 7c832db249982a0499b4a55e0d244c9d, type: 3}
-  m_PrefabInstance: {fileID: 1908073738}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1495097366
 GameObject:
   m_ObjectHideFlags: 0
