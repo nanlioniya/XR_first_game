@@ -21,7 +21,7 @@ public class Look_horizontally : MonoBehaviour
 
         if (headsetPosition.y < -0.5f)
         {
-            Debug.Log("Triggered by head position!");
+            //Debug.Log("Triggered by head position!");
             isHorizontally = true;
         }
         
