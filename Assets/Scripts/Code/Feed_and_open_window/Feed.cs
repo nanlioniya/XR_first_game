@@ -6,6 +6,7 @@ public class Feed : MonoBehaviour
 {
 
     public bool done = false;
+    public GameObject fox;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +29,8 @@ public class Feed : MonoBehaviour
             rend.enabled = true;
             */
             done = true;
+            fox.GetComponent<Animator>().Play("eat");
+
         }
         else
         {

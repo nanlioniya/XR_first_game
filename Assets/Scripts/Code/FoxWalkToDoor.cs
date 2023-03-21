@@ -20,16 +20,12 @@ public class FoxWalkToDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
+        
         flag1 = FindObjectOfType<Look_horizontally>().isHorizontally;
         flag2 = FindObjectOfType<Touching_Head>().Head_touched;
         flag3 = FindObjectOfType<Open_window>().done;
         flag4 = FindObjectOfType<Feed>().done;
-        */
-        flag1 = true;
-        flag2 = true;
-        flag3 = true;
-        flag4 = true;
+
         if (flag1 && flag2 && flag3 && flag4)
         {
             

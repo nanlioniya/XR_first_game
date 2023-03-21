@@ -5,8 +5,10 @@ using UnityEngine;
 namespace SojaExiles
 
 {
+
 	public class opencloseDoor : MonoBehaviour
 	{
+		bool flag1, flag2, flag3, flag4;
 
 		public Animator openandclose;
 		public bool open;
@@ -14,38 +16,23 @@ namespace SojaExiles
 
 		void Start()
 		{
-			open = false;
+			flag1 = false;
+			flag2 = false;
+			flag3 = false;
+			flag4 = false;
+
 		}
 
-		void OnMouseOver()
-		{
+        private void Update()
+        {
+			flag1 = FindObjectOfType<Look_horizontally>().isHorizontally;
+			flag2 = FindObjectOfType<Touching_Head>().Head_touched;
+			flag3 = FindObjectOfType<Open_window>().done;
+			flag4 = FindObjectOfType<Feed>().done;
+
+			if (flag1 && flag2 && flag3 && flag4)
 			{
-				if (Player)
-				{
-					float dist = Vector3.Distance(Player.position, transform.position);
-					if (dist < 15)
-					{
-						if (open == false)
-						{
-							if (Input.GetMouseButtonDown(0))
-							{
-								StartCoroutine(opening());
-							}
-						}
-						else
-						{
-							if (open == true)
-							{
-								if (Input.GetMouseButtonDown(0))
-								{
-									StartCoroutine(closing());
-								}
-							}
-
-						}
-
-					}
-				}
+				gameObject.GetComponent<Animator>().Play("Opening");
 
 			}
 

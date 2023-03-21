@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Food
   - Hand
+  - RoomLight
+  - Cola
   layers:
   - Default
   - TransparentFX

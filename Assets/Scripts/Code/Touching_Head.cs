@@ -26,11 +26,11 @@ public class Touching_Head : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // Debug.Log("Triggered by: " + other.gameObject.name);
+         Debug.Log("Triggered by: " + other.gameObject.name);
         if (other.CompareTag("Hand"))
         {
             // Debug.Log("Triggerred.");
-            if(touch_times++ > 10){
+            if(touch_times++ > 5){
                 // Debug.Log("Touch Done!");
                 Head_touched = true;
             }

@@ -25,8 +25,6 @@ public class Look_horizontally : MonoBehaviour
             isHorizontally = true;
         }
         
-        else{
-            isHorizontally = false;
-        }
+
     }
 }
