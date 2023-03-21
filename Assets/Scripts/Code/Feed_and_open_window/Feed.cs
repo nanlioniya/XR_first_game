@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Feed : MonoBehaviour
 {
+
+    public bool done = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +27,7 @@ public class Feed : MonoBehaviour
             Renderer rend = this.gameObject.GetComponent<Renderer>();
             rend.enabled = true;
             */
-
+            done = true;
         }
         else
         {
