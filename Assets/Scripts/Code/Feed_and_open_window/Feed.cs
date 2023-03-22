@@ -18,24 +18,43 @@ public class Feed : MonoBehaviour
     {
         
     }
+    
+    private IEnumerator PlayEatAnimation()
+    {
+        // 播放 "eat" 動畫
+        fox.GetComponent<Animator>().Play("eat");
+
+        // 等待動畫的播放完成
+        yield return new WaitForSeconds(fox.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length);
+
+        // 設定 done 為 true
+        done = true;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("trigger");
         if (other.tag == "Food")
         {
-            /*
-            Renderer rend = this.gameObject.GetComponent<Renderer>();
-            rend.enabled = true;
-            */
-            done = true;
-            fox.GetComponent<Animator>().Play("eat");
-
-        }
-        else
-        {
-            Debug.Log("other");
+            StartCoroutine(PlayEatAnimation());
         }
     }
+    // private void OnTriggerEnter(Collider other)
+    // {
+    //     Debug.Log("trigger");
+    //     if (other.tag == "Food")
+    //     {
+    //         /*
+    //         Renderer rend = this.gameObject.GetComponent<Renderer>();
+    //         rend.enabled = true;
+    //         */
+            
+    //         fox.GetComponent<Animator>().Play("eat");
+    //         done = true;
+    //     }
+    //     else
+    //     {
+    //         Debug.Log("other");
+    //     }
+    // }
 
 }

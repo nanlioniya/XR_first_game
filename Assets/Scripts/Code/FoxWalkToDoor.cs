@@ -7,10 +7,13 @@ public class FoxWalkToDoor : MonoBehaviour
     // Start is called before the first frame update
     bool flag1, flag2, flag3, flag4;
     public List<GameObject>  wayPoints;
+
+    public bool win;
     public float speed = 2;
     int index = 0;
     void Start()
     {
+        win = false;
         flag1 = false;
         flag2 = false;
         flag3 = false;
@@ -28,7 +31,8 @@ public class FoxWalkToDoor : MonoBehaviour
 
         if (flag1 && flag2 && flag3 && flag4)
         {
-            
+            win = true;
+
             Vector3 destination = wayPoints[index].transform.position;
             Vector3 newPos = Vector3.MoveTowards(transform.position, wayPoints[index].transform.position, speed * Time.deltaTime);
             transform.position = newPos;
@@ -38,6 +42,13 @@ public class FoxWalkToDoor : MonoBehaviour
             {
                 index++; 
             }
+
+            transform.LookAt(wayPoints[index].transform.position);
+
+            Quaternion rotationAmount = Quaternion.Euler(0, 90, 0);
+            Quaternion postRotation = transform.rotation * rotationAmount;
+
+            transform.rotation = postRotation;
         }
     }
 }
