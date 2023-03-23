@@ -6,7 +6,9 @@ public class StreetFoxWalk : MonoBehaviour
 {
     // Start is called before the first frame update
     public Transform wayPoints;
+    public bool flag = false;
     public float speed = 1.5f;
+    public bool enter = false;
     void Start()
     {
         
@@ -17,9 +19,22 @@ public class StreetFoxWalk : MonoBehaviour
     {
         float cur_distance = Vector3.Distance(transform.position, wayPoints.position);
 
-        if(cur_distance > 4)
+        if(cur_distance > 2)
         {
+            gameObject.GetComponent<Animator>().enabled = true;
+            gameObject.GetComponent<Animator>().Play("walk");
             transform.position = Vector3.MoveTowards(transform.position, wayPoints.position, speed * Time.deltaTime);
+        }
+        else{
+            if(enter){
+                gameObject.GetComponent<Animator>().Play("die");
+            }
+            else{
+                gameObject.GetComponent<Animator>().Play("idle");
+            }
+            
+            //gameObject.GetComponent<Animator>().Play("leg");
+
         }
         //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(wayPoints.position - transform.position), speed * Time.deltaTime);
         transform.LookAt(wayPoints);
@@ -30,5 +45,14 @@ public class StreetFoxWalk : MonoBehaviour
         transform.rotation = postRotation;
 
         
+    }
+
+        private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Hand"))
+        {
+            enter = true;
+
+        }
     }
 }

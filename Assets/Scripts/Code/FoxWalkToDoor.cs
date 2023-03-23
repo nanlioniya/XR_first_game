@@ -36,7 +36,7 @@ public class FoxWalkToDoor : MonoBehaviour
             Vector3 destination = wayPoints[index].transform.position;
             Vector3 newPos = Vector3.MoveTowards(transform.position, wayPoints[index].transform.position, speed * Time.deltaTime);
             transform.position = newPos;
-
+            
             float distance = Vector3.Distance(transform.position, destination);
             if(distance <= 0.05)
             {
